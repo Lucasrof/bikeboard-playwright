@@ -25,7 +25,7 @@ jobs:
       run: npx playwright install --with-deps chromium
 
     - name: Run E2E test
-      run: npx playwright test --projct=chromium
+      run: npx playwright test --project=chromium
       
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
@@ -53,7 +53,7 @@ jobs:
       run: npx playwright install --with-deps firefox
 
     - name: Run E2E test
-      run: npx playwright test --projct=firefox
+      run: npx playwright test --project=firefox
       
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
@@ -81,7 +81,7 @@ jobs:
       run: npx playwright install --with-deps webkit
 
     - name: Run E2E test
-      run: npx playwright test --projct=webkit
+      run: npx playwright test --project=webkit
       
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
