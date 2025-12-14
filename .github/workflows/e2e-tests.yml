@@ -1,6 +1,11 @@
 name: E2E Tests
 on:
   workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Escolha o navegado de sua preferência para os testes (chromium, firefox e webkit)'
+        required: true
+        default: 'chromium'
 jobs:
   test:
     timeout-minutes: 60
@@ -18,7 +23,7 @@ jobs:
       run: npm install
 
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps chromium
+      run: npx playwright install --with-deps ${{ github.event.inputs.browser }}
 
     - name: Run E2E test
       run: npx playwright test --project=chromium
