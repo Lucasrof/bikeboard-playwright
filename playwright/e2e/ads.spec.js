@@ -62,7 +62,7 @@ test.describe("Cadastro de Anúncio", () => {
     ).toBeVisible()
   })
 
-  test("text-WhatsApp deve conter menos de 10 digitos", async ({
+  test("text-WhatsApp deve ter menos de 10 digitos", async ({
     page
   }) => {
     await setupWhatsAppInvalidLengthMock(page)
@@ -70,7 +70,7 @@ test.describe("Cadastro de Anúncio", () => {
     await actions.submitAdForm()
 
     await expect(
-      page.locator("text=WhatsApp deve ter 10 ou 11 dígitos")
+      page.locator("text-WhatsApp deve ter menos de 10 digitos")
     ).toBeVisible()
   })
 
