@@ -62,7 +62,7 @@ test.describe("Cadastro de Anúncio", () => {
     ).toBeVisible()
   })
 
-  test("deve exibir erro quando o WhatsApp tem menos de 10 dígitos", async ({
+  test("text-WhatsApp deve ter menos de 10 digitos", async ({
     page
   }) => {
     await setupWhatsAppInvalidLengthMock(page)
